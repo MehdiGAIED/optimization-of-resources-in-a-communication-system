@@ -1,6 +1,27 @@
 définir la puissance d'intérférence PI
-définir la puissance Pr
+définir la puissance PR
+définir la variance de bruit de canal optique segma2
 définir le nombre des points daccés M
 définir la bande passante B
 défnir le nombre de tour K
 définir la probabilité de distribution uniforme p=1/M
+intialiser le tableau de probabilité de taille M prob par :
+Prob=[p,p,p.....p] 
+intialiser le dictionnaire U conteant les nombres de services suportés par chaque point d'accès :
+U={j :aléatoire (1,30 } avec j allant de 1 à M contenant un valeur aléatoire entre 1 et 30
+intialiser le tableau des débits fournis par les M points d'accés à 0 comme suit:
+Q=[0,0,0,......0] avec Q de taille M
+Pour l de 1 à K faire :
+    |on calcule la séquence gama(l)=sqrt((2*log(M)/(l*M)) (pour assurer la convergence )
+    |on détermine la position de la probabilité maximale dans le tableau prob définit par un variable pos
+    |on définit le point d'accés ayant cette probabilité maximale(on détermine id de point d'accés ayant la probailité maximale dans la position pos)
+    |on met à jour le nombre de utilisateurs supporté par ce point d'accés (U[apmax]=U[ap]+1)
+    |pour i de 0 à M faire :
+         |si i== pos faire :
+            |on met à jour le débit fournit par le point d'accés choisit selon la formule : Q[i]=( (B/U[i])*log2(1+(PR/((segma2*B)/U[i]+PI) )
+   |on met à jour le tableau de probabilité à utuiliser pour le tour suivant selon:
+   |prob[i]=(exp(-gama(l)(l- somme sur l de Q choisit pour le tour l))/(somme sur j(1 à M)(-gama(l)(l-(somme sur  sur l de Q choisit pour le tour l) )
+   
+  
+   
+     

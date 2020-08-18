@@ -8,7 +8,7 @@ définir la probabilité de distribution uniforme p=1/M
 intialiser le tableau de probabilité de taille M prob par :
 Prob=[p,p,p.....p] 
 intialiser le dictionnaire U conteant les nombres de services suportés par chaque point d'accès :
-U={j :aléatoire (1,30 } avec j allant de 1 à M contenant un valeur aléatoire entre 1 et 30
+U={j :aléatoire (1,30)} avec j allant de 1 à M contenant un valeur aléatoire entre 1 et 30
 intialiser le tableau des débits fournis par les M points d'accés à 0 comme suit:
 Q=[0,0,0,......0] avec Q de taille M
 Pour l de 1 à K faire :

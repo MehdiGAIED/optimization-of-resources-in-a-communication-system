@@ -1,1 +1,7 @@
-
+notre scénario est comme suit :
+une fois un point d'accés choisit le calcul de débit utilisateur se fait comme suit :
+soit d la distance entre notre station et le point d'accés alors :
+si d<5m alors le débit Q =800Mbps
+si d entre 5 et 10m alors Q=600MBps
+si d entre 10 et 25m alors Q=400Mbps
+si d>25m alors le débit Q=0Mbps 

@@ -12,10 +12,10 @@ Pour l de 1 à K faire :
                 |on définit le point d'accés ayant cette probabilité maximale(on détermine id de point d'accés ayant la probailité maximale dans la position pos)
                 |on met à jour le nombre de utilisateurs supporté par ce point d'accés (U[apmax]=U[ap]+1)
                 |on met à jour le nombre de utilisateurs dans l'ancien ap (U[ap]=U[ap]-1)
-                |pour i de 0 à M faire :
-                    |si i== pos faire :
+                |si i== pos faire :
                           |on met à jour le débit fournit par le point d'accés choisit selon la formulation définit dans le scénario .
-                          |on met à jour le tableau de probabilité à utiliser pour le tour suivant selon la formulation définit dans le scénario .
+                |pour i de 0 à M faire :          
+                          |on met à jour le tableau de probabilité à utiliser pour le tour suivant selon la formulation définit dans le scénario .                         
           sinon (k mod 10=0) (epsilon-greedy avec epsilon=0.1 )
               on choisit une probabilité au hasard
               on détermine le point d'accés qui correspond à cette probabilité 

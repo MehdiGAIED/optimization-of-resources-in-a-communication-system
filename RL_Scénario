@@ -3,10 +3,14 @@ définir le nombre des points daccés M
 définir la bande passante B
 défnir le nombre de tour K
 une fois un point d'accés choisi le calcul de débit utilisateur se fait comme suit :
-soit d la distance entre notre station et le point d'accés alors :
+soit d la distance entre notre utilisateur  et le point d'accés alors dans le cas d'un seul utilisateur connecté 
 si d<5m alors le débit Q =800Mbps
 si d entre 5 et 10m alors Q=600MBps
 si d entre 10 et 25m alors Q=400Mbps
 si d>25m alors le débit Q=0Mbps 
-ce débit va intervenir dans la mise de probabilité :
+si plusieurs utilisateurs sont connectés ,il aura un partage de débit selon la distance entre les utilisateurs et le point d'accès
+ce débit va intervenir dans la mise de probabilité 
+
+
+
 

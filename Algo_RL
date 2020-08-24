@@ -2,27 +2,26 @@
 définir la probabilité de distribution uniforme p=1/M
 intialiser le tableau de probabilité de taille M prob par :
 Prob=[p,p,p.....p] 
-intialiser le dictionnaire U conteant les nombres de services suportés par chaque point d'accès :
+intialiser le dictionnaire U conteant les nombres de utilisateurs suportés par chaque point d'accès :
 U={j :aléatoire (1,30)} avec j allant de 1 à M contenant un valeur aléatoire entre 1 et 30
 intialiser le tableau des débits fournis par les M points d'accés à 0 comme suit:
 Q=[0,0,0,......0] avec Q de taille M
 Pour l de 1 à K faire :
-           si k mod 10<>0
-                |on calcule la séquence gama(l)=sqrt((2*log(M)/(l*M)) (pour assurer la convergence )
+           si k mod 10<>0 
                 |on détermine la position de la probabilité maximale dans le tableau prob définit par un variable pos
                 |on définit le point d'accés ayant cette probabilité maximale(on détermine id de point d'accés ayant la probailité maximale dans la position pos)
                 |on met à jour le nombre de utilisateurs supporté par ce point d'accés (U[apmax]=U[ap]+1)
                 |on met à jour le nombre de utilisateurs dans l'ancien ap (U[ap]=U[ap]-1)
                 |pour i de 0 à M faire :
                     |si i== pos faire :
-                          |on met à jour le débit fournit par le point d'accés choisit selon la formule : Q[i]=( (B/U[i])*log2(1+(PR/((segma2*B)/U[i]+PI) )
-                          |on met à jour le tableau de probabilité à utuiliser pour le tour suivant selon:
-                          |prob[i]=(exp(-gama(l)(l- somme sur l de Q choisit pour le tour l))/(somme sur j(1 à M)(-gama(l)(l-(somme sur  sur l de Q choisit pour le tour l) )
-           
-           sinon (k mod 10=0)
-           on choisit une probabilité au hasard
-           on détermine le point d'accés qui correspond à cette probabilité
-           on clacule le début utilisateur 
-           on met à jour le tableau  de probabilté à utiliser dans le tour suivant.
+                          |on met à jour le débit fournit par le point d'accés choisit selon la formulation définit dans le scénario .
+                          |on met à jour le tableau de probabilité à utiliser pour le tour suivant selon la formulation définit dans le scénario .
+          sinon (k mod 10=0) (epsilon-greedy avec epsilon=0.1 )
+              on choisit une probabilité au hasard
+              on détermine le point d'accés qui correspond à cette probabilité 
+              on met à jour le nombre de utilisateurs supporté par ce point d'accés (U[apmax]=U[ap]+1)
+              on met à jour le nombre de utilisateurs dans l'ancien ap (U[ap]=U[ap]-1)
+              on clacule le début utilisateur selon la formulation définit dans le scénario .
+              on met à jour le tableau  de probabilité à utiliser dans le tour suivant selon la formulation défini dans le scénario .
    
      
